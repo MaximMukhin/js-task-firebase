@@ -23,7 +23,10 @@ button {
   */
 
 #sidebar {
-  background-color: #E57373;
+  background: linear-gradient(45deg,
+        #1281db 0%, #1281db 40%,
+        #2196F3 40%, #2196F3 90%,
+        #89c3fc 90%, #89c3fc 100%);
   padding: 15px;
 }
 

@@ -23,7 +23,7 @@ const addTask = (event) => {
     setTimeout(() => {
       input.value = "";
       input.className = "";
-    }, 1000);
+    }, 500);
   }
 };
 

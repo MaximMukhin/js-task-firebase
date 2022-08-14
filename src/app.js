@@ -33,3 +33,13 @@ btnAddTask.addEventListener("click", addTask);
 input.addEventListener("input", () => {
   btnAddTask.disabled = !isValid(input.value);
 });
+
+const fethToConsole = document.querySelector("#fetch-to-console");
+
+const getTask = () => {
+  fetch("https://js-task-firebase-default-rtdb.firebaseio.com/task.json")
+    .then((response) => response.json())
+    .then((respons) => console.log(respons));
+};
+
+fethToConsole.addEventListener("click", getTask);

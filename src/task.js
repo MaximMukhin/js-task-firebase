@@ -45,7 +45,7 @@ function renderOneTask(task) {
   ${new Date(task.date).toLocaleDateString()}
   ${new Date(task.date).toLocaleTimeString()}
   </div>
-  <div>${task.text}</div>
+  <div>${task.text} <input type="checkbox" ></input></div>
   <br>
   `;
 }

@@ -12,7 +12,23 @@ export class Task {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
-      });
+        task.id = response.name;
+        return task;
+      })
+      .then(addToLocalStorage)
+      .then(Task.renderTaskList);
   }
+  static renderTaskList() {
+    const task = getTaskFromLocalStorage();
+  }
+}
+
+function addToLocalStorage(task) {
+  const allTask = getTaskFromLocalStorage();
+  allTask.push(task);
+  localStorage.setItem("task", JSON.stringify(allTask));
+}
+
+function getTaskFromLocalStorage() {
+  return JSON.parse(localStorage.getItem("task") || "[]");
 }

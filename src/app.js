@@ -6,7 +6,7 @@ const form = document.getElementById("form");
 const input = form.querySelector("#task-input");
 const btnAddTask = form.querySelector("#btn-add-task");
 
-console.log(isValid(input.value));
+window.addEventListener("load", Task.renderTaskList);
 
 const addTask = (event) => {
   event.preventDefault();

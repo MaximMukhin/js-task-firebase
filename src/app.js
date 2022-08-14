@@ -1,3 +1,4 @@
+import { Task } from "./task";
 import isValid from "./module/isValid";
 import "./styles.css";
 
@@ -18,12 +19,13 @@ const addTask = (event) => {
     };
 
     btnAddTask.disabled = true;
-
-    console.log("task", task);
-    setTimeout(() => {
-      input.value = "";
-      input.className = "";
-    }, 500);
+    //Async
+    Task.create(task).then(() => {
+      setTimeout(() => {
+        input.value = "";
+        input.className = "";
+      }, 500);
+    });
   }
 };
 

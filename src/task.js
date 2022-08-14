@@ -1,7 +1,7 @@
 export class Task {
   static create(task) {
     return fetch(
-      "https://js-authorization-aac72-default-rtdb.firebaseio.com/task.json",
+      "https://js-task-firebase-default-rtdb.firebaseio.com/task.json",
       {
         method: "POST",
         body: JSON.stringify(task),

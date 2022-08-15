@@ -1,4 +1,4 @@
-import { Task } from "./task";
+import { Task } from "./module/task";
 import isValid from "./module/isValid";
 import "./styles.css";
 import getTasks from "./module/getTasks";

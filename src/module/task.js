@@ -15,11 +15,12 @@ export class Task {
         task.id = response.name;
         return task;
       })
-      .then(addToLocalStorage)
       .then(Task.renderTaskList);
   }
+
+  
   static renderTaskList() {
-    const task = getTaskFromLocalStorage();
+    const task = "";
     const html = task.length
       ? task.map(renderOneTask).join("")
       : `<div class="mui--text-headline">Нет задач</div>`;
@@ -27,16 +28,6 @@ export class Task {
     const list = document.querySelector("#render-list");
     list.innerHTML = html;
   }
-}
-
-function addToLocalStorage(task) {
-  const allTask = getTaskFromLocalStorage();
-  allTask.push(task);
-  localStorage.setItem("task", JSON.stringify(allTask));
-}
-
-function getTaskFromLocalStorage() {
-  return JSON.parse(localStorage.getItem("task") || "[]");
 }
 
 function renderOneTask(task) {

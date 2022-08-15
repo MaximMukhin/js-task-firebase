@@ -1,6 +1,7 @@
 import { Task } from "./task";
 import isValid from "./module/isValid";
 import "./styles.css";
+import getTasks from "./module/getTasks";
 
 const form = document.getElementById("form");
 const input = form.querySelector("#task-input");
@@ -34,12 +35,10 @@ input.addEventListener("input", () => {
   btnAddTask.disabled = !isValid(input.value);
 });
 
-const fethToConsole = document.querySelector("#fetch-to-console");
+const fetchToConsole = document.querySelector("#fetch-to-console");
 
-const getTask = () => {
-  fetch("https://js-task-firebase-default-rtdb.firebaseio.com/task.json")
-    .then((response) => response.json())
-    .then((respons) => console.log(respons));
+const getTasksBtn = () => {
+  getTasks().then((data) => console.log(Object.entries(data)));
 };
 
-fethToConsole.addEventListener("click", getTask);
+fetchToConsole.addEventListener("click", getTasksBtn);

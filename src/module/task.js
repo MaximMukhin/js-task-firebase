@@ -21,8 +21,8 @@ export class Task {
 
 
 
-  static renderTaskList() {
-    const task = "";
+  static renderTaskList(coll) {
+    const task = coll;
     const html = task.length
       ? task.map(renderOneTask).join("")
       : `<div class="mui--text-headline">Нет задач</div>`;
@@ -38,7 +38,7 @@ function renderOneTask(task) {
   ${new Date(task.date).toLocaleDateString()}
   ${new Date(task.date).toLocaleTimeString()}
   </div>
-  <div>${task.text} <input type="checkbox" ></input></div>
+  <div>${task.text} <input type="checkbox" /></div>
   <br>
   `;
 }

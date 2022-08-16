@@ -35,10 +35,12 @@ input.addEventListener("input", () => {
   btnAddTask.disabled = !isValid(input.value);
 });
 
+getTasks().then((tasks) => Task.renderTaskList(tasks))
 const fetchToConsole = document.querySelector("#fetch-to-console");
 
+
 const getTasksBtn = () => {
-  getTasks();
+  getTasks().then((data) => console.log(data))
 };
 
 fetchToConsole.addEventListener("click", getTasksBtn);

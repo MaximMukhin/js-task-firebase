@@ -13,12 +13,14 @@ export class Task {
       .then((response) => response.json())
       .then((response) => {
         task.id = response.name;
+        console.log(task)
         return task;
       })
       .then(Task.renderTaskList);
   }
 
-  
+
+
   static renderTaskList() {
     const task = "";
     const html = task.length

@@ -3,9 +3,10 @@ const getTasks = () => {
     .then((response) => response.json())
     .then((data) => {
       const dataToArray = Object.entries(data);
-      console.log("dataToArray", dataToArray);
+      // console.log("dataToArray", dataToArray);
       const tasksColl = dataToArray.map(newTask);
-      console.log("tasksColl", tasksColl);
+      // console.log("tasksColl", tasksColl);
+      return tasksColl;
     });
 };
 

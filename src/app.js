@@ -38,7 +38,7 @@ input.addEventListener("input", () => {
 const fetchToConsole = document.querySelector("#fetch-to-console");
 
 const getTasksBtn = () => {
-  getTasks().then((data) => console.log(Object.entries(data)));
+  getTasks();
 };
 
 fetchToConsole.addEventListener("click", getTasksBtn);

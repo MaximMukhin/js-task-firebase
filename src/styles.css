@@ -53,10 +53,11 @@ button {
 
 .modal {
   max-width: 600px;
-  max-height: 300px;
+  max-height: 320px;
   margin: 100px auto;
   overflow-y: auto;
   background: #fff;
+  border-radius: 8px;
 }
 
 .modal > h1 {
@@ -64,5 +65,5 @@ button {
 }
 
 .modal .modal-content {
-  padding: 64px;
+  padding: 32px;
 }

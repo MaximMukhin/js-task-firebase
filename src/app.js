@@ -6,6 +6,32 @@ import getTasks from "./module/getTasks";
 const form = document.getElementById("form");
 const input = form.querySelector("#task-input");
 const btnAddTask = form.querySelector("#btn-add-task");
+const modalLogin = document.getElementById('modal-login')
+
+
+const openModal = () => {
+  createModal('Авторизация', '<h1>Test</h1>')
+  console.log('777')
+}
+
+const createModal = (title, content) => {
+  const modal = document.createElement('div')
+  modal.classList.add('modal')
+
+  const html = `
+  <h1>${title}</h1>
+  <div class="modal-content">${content}</div>
+  `
+  modal.innerHTML = `  
+  <h1>${title}</h1>
+  <div class="modal-content">${content}</div>
+`
+  mui.overlay('on', modal)
+}
+
+modalLogin.addEventListener('click', openModal)
+
+
 
 window.addEventListener("load", Task.renderTaskList);
 

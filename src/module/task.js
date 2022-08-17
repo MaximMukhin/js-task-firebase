@@ -19,7 +19,22 @@ export class Task {
       .then(Task.renderTaskList);
   }
 
-
+  static fetch(token) {
+      if (!token) {
+          return Promise.resolve(`<p class="error">У вас нету прав</p>`)
+      }
+      return fetch(`https://js-task-firebase-default-rtdb.firebaseio.com/task.json?${token}`)
+          .then(response => response.json())
+          .then(response => {
+              if (response.error) {
+                  return `<p class="error">${response.error}</p>`
+              }
+              return response ? Object.keys(response).map(key => ({
+                  ...response[key],
+                      id: key
+              })) : []
+          })
+  }
 
   static renderTaskList(coll) {
     const task = coll;

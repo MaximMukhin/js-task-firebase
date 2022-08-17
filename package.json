@@ -1,25 +1,19 @@
 {
   "name": "js-task-firebase",
   "version": "1.0.0",
-  "description": "",
+  "description": "js-task-firebase",
   "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "js",
-    "javascript"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaximMukhin/js-task-firebase.git"
+  },
   "author": "Maxim Mukhin",
   "license": "ISC",
-  "devDependencies": {
-    "clean-webpack-plugin": "^4.0.0",
-    "css-loader": "^6.7.1",
-    "html-webpack-plugin": "^5.5.0",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.10.0"
-  }
+  "bugs": {
+    "url": "https://github.com/MaximMukhin/js-task-firebase/issues"
+  },
+  "homepage": "https://github.com/MaximMukhin/js-task-firebase#readme"
 }

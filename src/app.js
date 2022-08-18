@@ -1,11 +1,13 @@
-import clg from "./module/clg.js";
+import getInput from "./module/getInput.js";
 
-clg();
-const input = document.querySelector("#input-task");
 const btnGetInput = document.querySelector("#get-input");
+const inputText = document.querySelector("#input-text");
 
-const getInput = () => {
-  console.log("Работает");
+const renderText = () => {
+  const textInput = getInput();
+  inputText.innerHTML = textInput;
 };
 
-btnGetInput.addEventListener("click", getInput);
+
+
+btnGetInput.addEventListener("click", renderText);

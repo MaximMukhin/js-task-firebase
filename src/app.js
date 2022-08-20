@@ -1,40 +1,21 @@
 import getInput from "./module/getInput.js";
+import renderListTask from "./module/renderListTask.js";
 
 const tasks = [];
 
-const btnGetInput = document.querySelector("#get-input");
-// const inputText = document.querySelector("#input-text");
-const renderList = document.querySelector("#render-list");
+const buttonGetInput = document.querySelector("#get-input");
+let input = document.querySelector("#input-task");
 
 const renderText = () => {
-  const textInput = getInput();
+  const textInput = getInput(input);
   tasks.push({ text: textInput, boolean: false });
-  //  inputText.innerHTML = textInput;
-  const input = document.querySelector("#input-task");
+
   input.value = "";
   console.log(tasks);
-  renderListTask();
+  renderListTask(tasks);
 };
 
-btnGetInput.addEventListener("click", renderText);
+buttonGetInput.addEventListener("click", renderText);
 
-const renderListTask = () => {
-  let outHtml = "";
-  tasks.forEach((el) => {
-    outHtml += `
-<div>
-
-  <div>${el.text}</div>
-  <div>
-    <input type="checkbox">
-    <button>Удалить</button>
-  </div>
-
-</div>
-
-    `;
-  });
-  renderList.innerHTML = outHtml;
-};
 
 

@@ -20,6 +20,6 @@ const renderText = () => {
   input.value = "";
   console.log(tasks);
   renderListTask(tasks);
-};
+}; 
 
 buttonGetInput.addEventListener("click", renderText);

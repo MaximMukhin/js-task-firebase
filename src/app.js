@@ -1,4 +1,5 @@
 import getInput from "./module/getInput.js";
+import getTasks from "./module/getTasks.js";
 import renderListTask from "./module/renderListTask.js";
 
 const tasks = [];
@@ -8,7 +9,6 @@ function Task(task) {
 }
 
 const task1 = new Task("привет");
-console.log(task1);
 
 const buttonGetInput = document.querySelector("#get-input");
 let input = document.querySelector("#input-task");
@@ -20,6 +20,13 @@ const renderText = () => {
   input.value = "";
   console.log(tasks);
   renderListTask(tasks);
-}; 
+};
 
 buttonGetInput.addEventListener("click", renderText);
+
+getTasks().then((data) => {
+  const tasks = Object.entries(data);
+  tasks.forEach((el) => {
+    console.log([el[0], el[1]]);
+  });
+});

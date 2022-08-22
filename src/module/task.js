@@ -4,7 +4,7 @@ export class Task {
       "https://js-task-firebase-default-rtdb.firebaseio.com/task.json",
       {
         method: "POST",
-        body: JSON.stringify(question),
+        body: JSON.stringify(task),
         headers: {
           "Content-Type": "application/json",
         },

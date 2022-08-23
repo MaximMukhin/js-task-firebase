@@ -8,7 +8,7 @@ const renderListTask = (tasks) => {
   <div>${el.text}</div>
   <div>
     <input type="checkbox">
-    <button>Удалить</button>
+    <button type="button" class="btn btn-outline-secondary">Удалить</button>
   </div>
 </div>
     `;

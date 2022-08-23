@@ -9,11 +9,11 @@ export class Task {
           "Content-Type": "application/json",
         },
       }
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        task.id = response.name;
-        return task;
-      });
+    );
+    // .then((response) => response.json())
+    // .then((response) => {
+    //   task.id = response.name;
+    //   return console.log(task);
+    // });
   }
 }

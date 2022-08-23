@@ -1,60 +1,29 @@
 import getInput from "./module/getInput.js";
 import getTasks from "./module/getTasks.js";
 import renderListTask from "./module/renderListTask.js";
+import { Task } from "./module/task.js";
 
-const tasks = [];
-
-function Task(task) {
-  (this.task = task), (this.boolean = false), (this.date = new Date().toJSON());
-}
+getTasks();
 
 const buttonAddTask = document.querySelector("#add-task");
 let input = document.querySelector("#input-task");
 
-const renderText = () => {
+const addTask = async () => {
   const textInput = getInput(input);
-  tasks.push({ text: textInput, boolean: false });
+  const task = {
+    text: textInput,
+    boolean: false,
+    date: new Date().toJSON(),
+  };
+
+  await Task.create(task);
+  await getTasks();
 
   input.value = "";
-  console.log(tasks);
-  renderListTask(tasks);
+  console.log(task);
 };
 
-buttonAddTask.addEventListener("click", renderText);
+buttonAddTask.addEventListener("click", addTask);
 
-getTasks().then((data) => {
-  const tasks = Object.entries(data);
-  let html = "";
 
-  tasks.forEach((el) => {
-    console.log([el[0], el[1]]);
-    html += `
-    <div class="flex-wrapper">
-      <div>
-        <div>      
-        ${new Date(el[1].date).toLocaleDateString()}
-        ${new Date(el[1].date).toLocaleTimeString()}
-        </div>
-        <div>${el[1].text}</div>
-      </div>
-      <div style="display: flex; align-items: center;">
-        <input 
-        class="form-check-input" 
-        type="checkbox" 
-        id="checkboxNoLabel" 
-        value="" aria-label="..."
-        >
-        <button 
-        type="button" 
-        class="btn btn-outline-secondary"
-        style="margin-left: 8px"
-        >
-        Удалить
-        </button>
-      </div>
-    </div>
-    `;
-  });
-  const list = document.querySelector("#list");
-  list.innerHTML = html;
-});
+

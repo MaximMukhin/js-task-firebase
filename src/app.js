@@ -30,19 +30,28 @@ getTasks().then((data) => {
     console.log([el[0], el[1]]);
     html += `
     <div class="flex-wrapper">
-    <div>
-      <div>${el[1].text}</div>
-      <div>      
-      ${new Date(el[1].date).toLocaleDateString()}
-      ${new Date(el[1].date).toLocaleTimeString()}
+      <div>
+        <div>      
+        ${new Date(el[1].date).toLocaleDateString()}
+        ${new Date(el[1].date).toLocaleTimeString()}
+        </div>
+        <div>${el[1].text}</div>
       </div>
-    </div>
-
-    <div>
-    <input type="checkbox">
-    <button>Удалить</button>
-    </div>
-
+      <div style="display: flex; align-items: center;">
+        <input 
+        class="form-check-input" 
+        type="checkbox" 
+        id="checkboxNoLabel" 
+        value="" aria-label="..."
+        >
+        <button 
+        type="button" 
+        class="btn btn-outline-secondary"
+        style="margin-left: 8px"
+        >
+        Удалить
+        </button>
+      </div>
     </div>
     `;
   });

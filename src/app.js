@@ -24,8 +24,28 @@ buttonAddTask.addEventListener("click", renderText);
 
 getTasks().then((data) => {
   const tasks = Object.entries(data);
-  const list = document.querySelector('#list')
+  let html = "";
+
   tasks.forEach((el) => {
     console.log([el[0], el[1]]);
+    html += `
+    <div class="flex-wrapper">
+    <div>
+      <div>${el[1].text}</div>
+      <div>      
+      ${new Date(el[1].date).toLocaleDateString()}
+      ${new Date(el[1].date).toLocaleTimeString()}
+      </div>
+    </div>
+
+    <div>
+    <input type="checkbox">
+    <button>Удалить</button>
+    </div>
+
+    </div>
+    `;
   });
+  const list = document.querySelector("#list");
+  list.innerHTML = html;
 });

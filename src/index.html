@@ -15,9 +15,8 @@
   </head>
   <body>
     <div class="container">
-      <h2>Мои задачи</h2>
-
-      <div class="input-group mb-3">
+<br>
+<!--       <div class="input-group mb-3">
         <input
         id="input-task"
           type="text"
@@ -40,8 +39,46 @@
       <div id="render-list" class="render-list">...</div>
       <hr />
       <div id="list" class="list">...</div>
-      <br />
+      <br /> -->
+
+      <div class="card">
+        <div class="card-header">
+          Мои задачи
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <div class="input-group mb-3">
+              <input
+              id="input-task"
+                type="text"
+                class="form-control"
+                placeholder="Добавить задание"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+                value="Сходить в магазин за чипсонами!"
+              />
+              <button
+              id="add-task"
+              class="btn btn-outline-primary"
+                type="button"
+                id="button-addon2"
+              >
+                Добавить!
+              </button>
+            </div>
+            <hr />
+            <div id="render-list" class="render-list">...</div>
+            <hr />
+            <div id="list" class="list">...</div>
+            <br />
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+
     </div>
+
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"

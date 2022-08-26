@@ -3,17 +3,14 @@ const getTasks = () => {
     .then((response) => response.json())
     .then((data) => {
       const tasks = Object.entries(data);
-      let newTasks = tasks.map((el) => {
+      const newTasks = tasks.map((el) => {
         return { id: el[0], ...el[1] };
       });
-      newTasks = [];
       renderList(newTasks);
     });
 };
 
 const renderList = (arr) => {
-  console.log(arr);
-
   let html = "";
 
   if (arr.length) {
@@ -48,7 +45,11 @@ const renderList = (arr) => {
     const list = document.querySelector("#list");
     list.innerHTML = html;
   } else {
-    list.innerHTML = "Нет задач";
+    list.innerHTML = `
+      <div class="alert alert-warning" role="alert">
+      Список задач пуст!
+      </div>
+      `;
   }
 };
 

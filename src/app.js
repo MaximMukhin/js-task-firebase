@@ -3,7 +3,7 @@ import getTasks from "./module/getTasks.js";
 import renderListTask from "./module/renderListTask.js";
 import { Task } from "./module/task.js";
 
-getTasks();
+window.addEventListener("DOMContentLoaded", getTasks);
 
 const buttonAddTask = document.querySelector("#add-task");
 let input = document.querySelector("#input-task");

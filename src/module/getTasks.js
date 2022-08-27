@@ -11,7 +11,6 @@ const getTasks = () => {
 };
 
 const renderList = (arr) => {
-  console.log("arr", arr);
   let html = "";
 
   if (arr.length) {

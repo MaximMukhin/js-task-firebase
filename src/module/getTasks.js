@@ -15,15 +15,15 @@ const renderList = (arr) => {
   let html = "";
 
   if (arr.length) {
-    arr.forEach((el) => {
+    arr.forEach(({ id, completed, date, text }) => {
       html += `
-      <div class="flex-wrapper">
+      <div class="flex-wrapper" id="${id}">
         <div>
           <div>      
-          ${new Date(el.date).toLocaleDateString()}
-          ${new Date(el.date).toLocaleTimeString()}
+          ${new Date(date).toLocaleDateString()}
+          ${new Date(date).toLocaleTimeString()}
           </div>
-          <div>${el.text}</div>
+          <div>${text}</div>
         </div>
         <div style="display: flex; align-items: center;">
           <input 
@@ -31,6 +31,7 @@ const renderList = (arr) => {
           type="checkbox" 
           id="checkboxNoLabel" 
           value="" aria-label="..."
+          ${completed && "checked"}
           >
           <button 
           type="button" 

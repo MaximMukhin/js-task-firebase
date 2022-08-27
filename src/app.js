@@ -12,7 +12,7 @@ const addTask = async () => {
   const textInput = getInput(input);
   const task = {
     text: textInput,
-    boolean: false,
+    completed: false,
     date: new Date().toJSON(),
   };
 

@@ -4,14 +4,6 @@ import {Task} from "./task.js";
 let input = document.querySelector("#input-task");
 const button = document.querySelector("#add-task");
 
-// input.oninput = function () {
-//   if (input.value.length) {
-//     button.removeAttribute("disabled");
-//   } else {
-//     button.setAttribute("disabled", true);
-//   }
-// };
-
 input.addEventListener("input", () => {
   console.log(input.value.length);
   if (input.value.length > 4) {

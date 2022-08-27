@@ -1,20 +1,42 @@
-import getInput from "./getInput.js";
 import getTasks from "./getTasks.js";
 import { Task } from "./task.js";
 
+let input = document.querySelector("#input-task");
+const button = document.querySelector("#add-task");
+
+// input.oninput = function () {
+//   if (input.value.length) {
+//     button.removeAttribute("disabled");
+//   } else {
+//     button.setAttribute("disabled", true);
+//   }
+// };
+
+input.addEventListener("input", () => {
+  console.log(input.value.length);
+  if (input.value.length > 4) {
+    button.removeAttribute("disabled");
+  } else {
+    button.setAttribute("disabled", true);
+  }
+});
+
 const addTask = async () => {
-  let input = document.querySelector("#input-task");
-  const textInput = getInput(input);
+  button.setAttribute("disabled", true);
+  const textInput = input.value;
   const task = {
     text: textInput,
     completed: false,
     date: new Date().toJSON(),
   };
 
-  await Task.create(task);
-  await getTasks();
+  if (textInput) {
+    await Task.create(task);
+    await getTasks();
+  }
 
   input.value = "";
+
   console.log(task);
 };
 

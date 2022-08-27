@@ -16,7 +16,7 @@ const renderList = (arr) => {
   if (arr.length) {
     arr.forEach(({id, completed, date, text}) => {
       html += `
-      <div class="flex-wrapper" id="${id}">
+      <div class="task-wrapper" id="${id}">
         <div>
           <div>      
           ${new Date(date).toLocaleDateString()}
@@ -33,8 +33,10 @@ const renderList = (arr) => {
           ${completed && "checked"}
           >
           <button 
+          id="remove-task"
+          data-action="delete"
           type="button" 
-          type="button" class="btn btn-outline-danger"
+          class="btn btn-outline-danger"
           style="margin-left: 8px"
           >
           Удалить

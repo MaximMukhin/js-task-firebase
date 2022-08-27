@@ -4,7 +4,7 @@ const getTasks = () => {
     .then((data) => {
       const tasks = Object.entries(data);
       const newTasks = tasks.map((el) => {
-        return { id: el[0], ...el[1] };
+        return {id: el[0], ...el[1]};
       });
       renderList(newTasks);
     });
@@ -14,7 +14,7 @@ const renderList = (arr) => {
   let html = "";
 
   if (arr.length) {
-    arr.forEach(({ id, completed, date, text }) => {
+    arr.forEach(({id, completed, date, text}) => {
       html += `
       <div class="flex-wrapper" id="${id}">
         <div>

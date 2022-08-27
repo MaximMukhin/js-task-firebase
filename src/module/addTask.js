@@ -1,5 +1,5 @@
 import getTasks from "./getTasks.js";
-import { Task } from "./task.js";
+import {Task} from "./task.js";
 
 let input = document.querySelector("#input-task");
 const button = document.querySelector("#add-task");

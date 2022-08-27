@@ -1,29 +1,27 @@
-import getInput from "./module/getInput.js";
+import addTask from "./module/addTask.js";
 import getTasks from "./module/getTasks.js";
-import renderListTask from "./module/renderListTask.js";
-import { Task } from "./module/task.js";
+// import getInput from "./module/getInput.js";
+// import renderListTask from "./module/renderListTask.js";
+// import { Task } from "./module/task.js";
 
 window.addEventListener("DOMContentLoaded", getTasks);
 
 const buttonAddTask = document.querySelector("#add-task");
-let input = document.querySelector("#input-task");
+// let input = document.querySelector("#input-task");
 
-const addTask = async () => {
-  const textInput = getInput(input);
-  const task = {
-    text: textInput,
-    completed: false,
-    date: new Date().toJSON(),
-  };
+// const addTask = async () => {
+//   const textInput = getInput(input);
+//   const task = {
+//     text: textInput,
+//     completed: false,
+//     date: new Date().toJSON(),
+//   };
 
-  await Task.create(task);
-  await getTasks();
+//   await Task.create(task);
+//   await getTasks();
 
-  input.value = "";
-  console.log(task);
-};
+//   input.value = "";
+//   console.log(task);
+// };
 
 buttonAddTask.addEventListener("click", addTask);
-
-
-

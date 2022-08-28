@@ -1,3 +1,5 @@
+import getTasks from "./getTasks.js";
+
 const removeTask = async (id) => {
   const res = await fetch(`https://js-task-firebase-default-rtdb.firebaseio.com/task/${id}.json`,
     {
@@ -7,6 +9,7 @@ const removeTask = async (id) => {
       }
     })
   const data = await res.json()
+  getTasks()
 }
 
 export default removeTask;

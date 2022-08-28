@@ -1,24 +1,4 @@
-const getTasks = () => {
-  return fetch("https://js-task-firebase-default-rtdb.firebaseio.com/task.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const tasks = Object.entries(data);
-      const newTasks = tasks.map((el) => {
-        return {id: el[0], ...el[1]};
-      });
-      renderList(newTasks);
-    })
-    .catch(e => {
-      console.log('Список пуст')
-      list.innerHTML = `
-      <div class="alert alert-warning" role="alert">
-      Список задач пуст!
-      </div>
-      `;
-    })
-};
-
-const renderList = (arr) => {
+const renderTaskList = (arr) => {
   let html = "";
 
   if (arr.length) {
@@ -67,7 +47,4 @@ const renderList = (arr) => {
   }
 };
 
-export default getTasks;
-
-
-
+export default renderTaskList;

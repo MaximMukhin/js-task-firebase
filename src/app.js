@@ -17,3 +17,22 @@ document.querySelector('.list').addEventListener('click', (event) => {
   }
 })
 
+document.querySelector('.list').addEventListener('click', (event) => {
+  if (event.target.dataset.action === 'completed') {
+    const parent = event.target.closest('.task-card')
+    const taskTitle = parent.querySelector('.task-title')
+    const input = parent.querySelector('.form-check-input')
+
+    if (input.checked) {
+      console.log('true')
+      taskTitle.classList.add('task-title--done')
+    } else {
+      console.log('false')
+      taskTitle.classList.toggle('task-title--done')
+    }
+    //console.log(input.checked)
+
+    console.log(parent)
+  }
+})
+

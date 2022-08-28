@@ -7,7 +7,15 @@ const getTasks = () => {
         return {id: el[0], ...el[1]};
       });
       renderList(newTasks);
-    });
+    })
+    .catch(e => {
+      console.log('Список пуст')
+      list.innerHTML = `
+      <div class="alert alert-warning" role="alert">
+      Список задач пуст!
+      </div>
+      `;
+    })
 };
 
 const renderList = (arr) => {
@@ -16,12 +24,14 @@ const renderList = (arr) => {
   if (arr.length) {
     arr.forEach(({id, completed, date, text}) => {
       html += `
-      <div class="task-wrapper" id="${id}">
+      <div class="task-card" id="${id}">
         <div>
-          <div>      
+          <div>  
+          Дата cоздания:    
           ${new Date(date).toLocaleDateString()}
           ${new Date(date).toLocaleTimeString()}
           </div>
+          <br>
           <div>${text}</div>
         </div>
         <div style="display: flex; align-items: center;">

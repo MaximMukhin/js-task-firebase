@@ -5,7 +5,6 @@ let input = document.querySelector("#input-task");
 const button = document.querySelector("#add-task");
 
 input.addEventListener("input", () => {
-  console.log(input.value.length);
   if (input.value.length > 4) {
     button.removeAttribute("disabled");
   } else {

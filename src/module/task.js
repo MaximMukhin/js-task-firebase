@@ -16,8 +16,4 @@ export class Task {
         return console.log(task);
       });
   }
-
-
-
-
 }

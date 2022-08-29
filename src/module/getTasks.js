@@ -6,7 +6,7 @@ const getTasks = () => {
       const newTasks = tasks.map((el) => {
         return {id: el[0], ...el[1]};
       });
-      renderList(newTasks);
+      renderTaskList(newTasks);
     })
     .catch(e => {
       console.log('Список пуст')
@@ -18,7 +18,7 @@ const getTasks = () => {
     })
 };
 
-const renderList = (arr) => {
+const renderTaskList = (arr) => {
   let html = "";
 
   if (arr.length) {

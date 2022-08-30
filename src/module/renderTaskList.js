@@ -27,7 +27,7 @@ const renderTaskList = (arr) => {
           id="remove-task"
           data-action="delete"
           type="button" 
-          class="btn btn-outline-danger"
+          class="btn btn-danger"
           style="margin-left: 8px"
           >
           Удалить

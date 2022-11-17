@@ -30,6 +30,7 @@ body {
     border: 1px solid rgb(203, 203, 203);
         border-radius: 4px;
         font-size: 16px;
+        background-color: rgb(248, 248, 248);
 }
 
 .task-title--done {
@@ -42,4 +43,7 @@ body {
 
 .black {
     color: black;
+}
+.card-body {
+    background-color: rgb(253, 253, 253);
 }

@@ -17,3 +17,16 @@ export class Task {
       });
   }
 }
+
+// fetch('http://localhost:4000/articles', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//         title: '',
+//         content: '',
+//     })
+// })
+//     .then((res) => res.json())
+//         .then((data) => console.log(data))
